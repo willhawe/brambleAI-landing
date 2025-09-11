@@ -4,85 +4,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BrambleAI - Stay Updated</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=1757620306">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <header class="header">
-            <div class="logo-container">
-                <!-- BrambleAI Logo -->
-                <img src="berry-logo-bg-removed.png" alt="BrambleAI Logo" class="logo" id="company-logo">
-                <h1 class="company-name">BrambleAI</h1>
-            </div>
-        </header>
-
-        <main class="main-content">
-            <section class="hero">
-                <h2 class="hero-title">Stay Updated with BrambleAI</h2>
-                <p class="hero-description">
-                    Be the first to know about our latest innovations and updates. 
-                    Join our community and never miss important announcements.
-                </p>
-            </section>
-
-            <section class="signup-section">
-                <form class="signup-form" id="signup-form">
-                    <div class="form-group">
-                        <label for="firstName">First Name</label>
-                        <input type="text" id="firstName" name="firstName" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="lastName">Last Name</label>
-                        <input type="text" id="lastName" name="lastName" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="company">Company (Optional)</label>
-                        <input type="text" id="company" name="company">
-                    </div>
-                    
-                    <div class="form-group checkbox-group">
-                        <label class="checkbox-label">
-                            <input type="checkbox" id="newsletter" name="newsletter" checked>
-                            <span class="checkmark"></span>
-                            I want to receive product updates and newsletters
-                        </label>
-                    </div>
-                    
-                    <div class="form-group checkbox-group">
-                        <label class="checkbox-label">
-                            <input type="checkbox" id="privacy" name="privacy" required>
-                            <span class="checkmark"></span>
-                            I agree to the <a href="#" class="privacy-link">Privacy Policy</a>
-                        </label>
-                    </div>
-                    
-                    <button type="submit" class="submit-btn">
-                        <span class="btn-text">Get Updates</span>
-                        <div class="loading-spinner" style="display: none;"></div>
-                    </button>
-                </form>
-                
-                <div class="success-message" id="success-message" style="display: none;">
-                    <div class="success-icon">✓</div>
-                    <h3>Thank you for signing up!</h3>
-                    <p>We'll keep you updated with the latest from BrambleAI.</p>
+        <!-- Two Column Layout -->
+        <div class="two-column-layout">
+            <!-- Left Column: Logo and Content -->
+            <div class="left-column">
+                <div class="logo-section">
+                    <img src="BrambleAI Logo - Black with White Highlights.svg" alt="BrambleAI Logo" class="logo" id="company-logo">
                 </div>
-            </section>
-        </main>
+                
+                <div class="content-section">
+                    <h1 class="main-title">Shaping the Future of Homecare</h1>
+                    <p class="main-description">
+                        We're building intelligent, data-driven solutions to tackle the everyday challenges of home care agencies.
+                        <span class="signup-text">Sign up to stay involved and help shape what comes next.</span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Right Column: Form -->
+            <div class="right-column">
+                <section class="signup-section">
+                    <form class="signup-form" id="signup-form">
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="company">Company (Optional)</label>
+                            <input type="text" id="company" name="company">
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="privacy" name="privacy" required>
+                                <span class="checkmark"></span>
+                                I agree to the&nbsp;<a href="privacy-policy.html" class="privacy-link" target="_blank">Privacy Policy</a>
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">
+                            <span class="btn-text">Get Updates</span>
+                            <div class="loading-spinner" style="display: none;"></div>
+                        </button>
+                    </form>
+                    
+                    <div class="success-message" id="success-message" style="display: none;">
+                        <div class="success-icon">✓</div>
+                        <h3>Thank you for signing up!</h3>
+                        <p>We'll keep you updated with the latest from BrambleAI.</p>
+                    </div>
+                </section>
+            </div>
+        </div>
 
         <footer class="footer">
-            <p>&copy; 2024 BrambleAI. All rights reserved.</p>
+            <p>&copy; 2025 BrambleAI. All rights reserved.</p>
         </footer>
     </div>
 
     <script src="script.js"></script>
 </body>
-</html> 
+</html>

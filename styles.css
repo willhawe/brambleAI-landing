@@ -9,8 +9,42 @@ body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     line-height: 1.6;
     color: #333;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    /* Soft radial blobs blended together, animated via background-position/size */
+    background:
+      radial-gradient(42% 60% at 20% 30%, rgba(0,198,91,0.55), transparent 65%),
+      radial-gradient(35% 50% at 80% 20%, rgba(0,103,91,0.45), transparent 60%),
+      radial-gradient(50% 70% at 60% 80%, rgba(0,198,91,0.35), transparent 65%),
+      linear-gradient(135deg, #00675B 0%, #00C65B 50%, #004D3A 100%); /* your brand colors */
+    background-blend-mode: screen, screen, screen, normal;
+    background-size: 140% 140%, 160% 160%, 180% 180%, 100% 100%;
+    background-position: 0% 0%, 100% 0%, 0% 100%, 50% 50%;
+    animation: waveShift 18s ease-in-out infinite alternate;
     min-height: 100vh;
+}
+
+@keyframes waveShift {
+    0% {
+        background-size: 140% 140%, 160% 160%, 180% 180%, 100% 100%;
+        background-position: 0% 0%, 100% 0%, 0% 100%, 50% 50%;
+        filter: saturate(1);
+    }
+    50% {
+        background-size: 160% 160%, 140% 140%, 200% 200%, 100% 100%;
+        background-position: 20% 20%, 80% 10%, 10% 80%, 50% 50%;
+        filter: saturate(1.05);
+    }
+    100% {
+        background-size: 180% 180%, 160% 160%, 160% 160%, 100% 100%;
+        background-position: 10% 40%, 90% 20%, 20% 90%, 50% 50%;
+        filter: saturate(1);
+    }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    body {
+        animation: none;
+    }
 }
 
 .container {
@@ -85,7 +119,7 @@ body {
 .signup-section {
     background: white;
     border-radius: 16px;
-    padding: 2.5rem;
+    padding: 1.2rem; /* Reduced from 1.5rem to 1.2rem */
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10px);
 }
@@ -93,7 +127,7 @@ body {
 .signup-form {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 0.8rem; /* Reduced from 1rem to 0.8rem */
 }
 
 .form-group {
@@ -110,7 +144,7 @@ body {
 
 .form-group input[type="text"],
 .form-group input[type="email"] {
-    padding: 0.75rem 1rem;
+    padding: 0.6rem 0.8rem;
     border: 2px solid #e5e7eb;
     border-radius: 8px;
     font-size: 1rem;
@@ -161,10 +195,10 @@ body {
 
 /* Submit button */
 .submit-btn {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #00C65B 0%, #00675B 100%);
     color: white;
     border: none;
-    padding: 1rem 2rem;
+    padding: 0.8rem 1.5rem;
     border-radius: 8px;
     font-size: 1.1rem;
     font-weight: 600;
@@ -236,7 +270,7 @@ body {
 /* Footer */
 .footer {
     text-align: center;
-    padding: 2rem 0;
+    padding: 0.5rem 0; /* Reduced from 2rem 0 to 1.5rem 0 */
     color: rgba(255, 255, 255, 0.7);
     font-size: 0.9rem;
 }
@@ -288,3 +322,122 @@ body {
         margin: 0 5px;
     }
 } 
+/* Two Column Layout Styles */
+.two-column-layout {
+    display: flex;
+    min-height: calc(100vh - 120px);
+    gap: 4rem;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.left-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 2rem;
+}
+
+.right-column {
+    flex: 1;
+    max-width: 500px;
+}
+
+.logo-section {
+    margin-bottom: 1.1rem; /* Reduced from 3rem to 1.5rem */
+    text-align: left; /* Add left alignment */
+    margin-left: -0.9rem; /* Move logo further left to align with title */
+}
+
+.logo {
+    height: 70px;
+    width: auto;
+}
+
+.main-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.main-description {
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+    max-width: 500px;
+}
+
+.signup-text {
+    display: block;
+    margin-top: 0.8rem; /* Slightly bigger than a line break */
+}
+
+/* Responsive Design for Two Columns */
+@media (max-width: 1024px) {
+    .two-column-layout {
+        flex-direction: column;
+        gap: 3rem;
+        text-align: center;
+    }
+    
+    .left-column {
+        padding-right: 0;
+    }
+    
+    .main-title {
+        font-size: 2.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .two-column-layout {
+        padding: 1rem;
+        gap: 2rem;
+    }
+    
+    .main-title {
+        font-size: 2.2rem;
+    }
+    
+    .main-description {
+        font-size: 1.1rem;
+    }
+    
+    .logo {
+        height: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-title {
+        font-size: 1.8rem;
+    }
+    
+    .main-description {
+        font-size: 1rem;
+    }
+}
+
+/* Privacy Policy Page - White Background */
+body.privacy-page {
+    background: white;
+    color: #333;
+}
+
+/* Privacy Policy Page Styles */
+.privacy-policy-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}

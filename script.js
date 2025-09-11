@@ -6,6 +6,9 @@ const loadingSpinner = document.querySelector('.loading-spinner');
 const successMessage = document.getElementById('success-message');
 const logo = document.getElementById('company-logo');
 
+// Google Apps Script Web App URL - Replace with your deployed web app URL
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyWdkHLy6D0PbQny9idrmOkqXc43NgQQ23qPumJYzzyRYpEGIh1rrdb-GOusP8sK_mO/exec';
+
 // Handle form submission
 form.addEventListener('submit', async function(e) {
     e.preventDefault();
@@ -37,11 +40,8 @@ form.addEventListener('submit', async function(e) {
     showLoading(true);
     
     try {
-        // Simulate form submission (replace with your actual API endpoint)
-        await submitForm(data);
-        
-        // Show success message
-        showSuccess();
+        // Submit to Google Sheets
+        await submitToGoogleSheets(data);
         
     } catch (error) {
         showError('Something went wrong. Please try again.');
@@ -51,40 +51,22 @@ form.addEventListener('submit', async function(e) {
     }
 });
 
-// Simulate form submission (replace with your actual API call)
-async function submitForm(data) {
-    // This is a placeholder - replace with your actual form submission logic
-    // For example, you might want to use a service like Formspree, Netlify Forms, or your own backend
+// Submit to Google Sheets
+async function submitToGoogleSheets(data) {
+    console.log('Submitting to Google Sheets:', data);
     
-    console.log('Form data to submit:', data);
-    
-    // Simulate network delay
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    // For now, we'll just store in localStorage for demonstration
-    const submissions = JSON.parse(localStorage.getItem('brambleai-submissions') || '[]');
-    submissions.push({
-        ...data,
-        timestamp: new Date().toISOString()
-    });
-    localStorage.setItem('brambleai-submissions', JSON.stringify(submissions));
-    
-    // Uncomment and modify this section when you have a backend endpoint:
-    /*
-    const response = await fetch('YOUR_FORM_ENDPOINT_URL', {
+    const response = await fetch(GOOGLE_SCRIPT_URL, {
         method: 'POST',
+        mode: 'no-cors', // Important for Google Apps Script
         headers: {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify(data)
     });
     
-    if (!response.ok) {
-        throw new Error('Network response was not ok');
-    }
-    
-    return await response.json();
-    */
+    // Note: With no-cors mode, we can't read the response
+    // So we assume success if no error was thrown
+    showSuccess();
 }
 
 // Email validation
@@ -185,5 +167,5 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Console log for debugging
     console.log('BrambleAI Landing Page loaded successfully!');
-    console.log('Form submissions will be logged to localStorage for testing.');
-}); 
+    console.log('Form submissions will be sent to Google Sheets.');
+});
