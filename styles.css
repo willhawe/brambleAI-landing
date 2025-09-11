@@ -18,7 +18,7 @@ body {
     background-blend-mode: screen, screen, screen, normal;
     background-size: 140% 140%, 160% 160%, 180% 180%, 100% 100%;
     background-position: 0% 0%, 100% 0%, 0% 100%, 50% 50%;
-    animation: waveShift 18s ease-in-out infinite alternate;
+    animation: waveShift 7s ease-in-out infinite alternate;
     min-height: 100vh;
 }
 
@@ -29,13 +29,13 @@ body {
         filter: saturate(1);
     }
     50% {
-        background-size: 160% 160%, 140% 140%, 200% 200%, 100% 100%;
-        background-position: 20% 20%, 80% 10%, 10% 80%, 50% 50%;
-        filter: saturate(1.05);
+        background-size: 180% 180%, 120% 120%, 220% 220%, 100% 100%;
+        background-position: 30% 30%, 70% 5%, 5% 70%, 50% 50%;
+        filter: saturate(1.1);
     }
     100% {
-        background-size: 180% 180%, 160% 160%, 160% 160%, 100% 100%;
-        background-position: 10% 40%, 90% 20%, 20% 90%, 50% 50%;
+        background-size: 200% 200%, 140% 140%, 160% 160%, 100% 100%;
+        background-position: 15% 50%, 85% 15%, 25% 85%, 50% 50%;
         filter: saturate(1);
     }
 }
@@ -360,15 +360,15 @@ body {
 .main-title {
     font-size: 3.5rem;
     font-weight: 700;
-    color: white;
+    color: white; /* Changed back to white */
     margin-bottom: 1.5rem;
     line-height: 1.2;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Changed shadow back to black */
 }
 
 .main-description {
     font-size: 1.3rem;
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(255, 255, 255, 0.9); /* Changed back to white with opacity */
     line-height: 1.6;
     max-width: 500px;
 }
