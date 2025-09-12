@@ -183,6 +183,15 @@ body {
     accent-color: #667eea;
 }
 
+/* Privacy text styling */
+.privacy-text {
+    text-align: center;
+    font-size: 0.8rem;
+    color: #6b7280;
+    margin: 0.1rem 0;
+    line-height: 1.4;
+}
+
 .privacy-link {
     color: #667eea;
     text-decoration: none;
