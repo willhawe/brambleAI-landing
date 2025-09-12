@@ -4,6 +4,12 @@
     font-weight: 100 900;
     font-style: normal;
 }
+@font-face {
+    font-family: 'NataSans-Regular';
+    src: url('NataSans-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
 
 /* Reset and base styles */
 * {
