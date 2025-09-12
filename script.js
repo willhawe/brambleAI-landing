@@ -21,12 +21,12 @@ form.addEventListener('submit', async function(e) {
         email: formData.get('email'),
         company: formData.get('company'),
         newsletter: formData.get('newsletter') === 'on',
-        privacy: formData.get('privacy') === 'on'
+        
     };
     
     // Validate required fields
-    if (!data.firstName || !data.lastName || !data.email || !data.privacy) {
-        showError('Please fill in all required fields and accept the privacy policy.');
+    if (!data.firstName || !data.lastName || !data.email) {
+        showError('Please fill in all required fields.');
         return;
     }
     
