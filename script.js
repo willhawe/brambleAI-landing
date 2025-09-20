@@ -7,7 +7,7 @@ const successMessage = document.getElementById('success-message');
 const logo = document.getElementById('company-logo');
 
 // Google Apps Script Web App URL - Replace with your deployed web app URL
-const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyWdkHLy6D0PbQny9idrmOkqXc43NgQQ23qPumJYzzyRYpEGIh1rrdb-GOusP8sK_mO/exec';
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyJobV43eAab7kVEOo0cmSFh3Fowkc2_EEPP2NtEhv0zkQJyA6bYH03bIq1Fl2fPf48zg/exec';
 
 // Handle form submission
 form.addEventListener('submit', async function(e) {
