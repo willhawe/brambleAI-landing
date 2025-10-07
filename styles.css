@@ -71,8 +71,16 @@ body {
 
 .top-bar {
     display: flex;
-    justify-content: flex-end;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
     padding: 1.5rem 0 0;
+    margin-bottom: 1.5rem;
+}
+
+.logo-wrapper {
+    display: inline-flex;
+    align-items: center;
 }
 
 .login-btn {
