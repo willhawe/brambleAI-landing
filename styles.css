@@ -98,6 +98,12 @@ body {
     transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
 }
 
+.login-btn:link,
+.login-btn:visited {
+    color: #ffffff;
+    text-decoration: none;
+}
+
 .login-btn:hover,
 .login-btn:focus {
     background: rgba(255, 255, 255, 0.18);
