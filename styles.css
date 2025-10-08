@@ -464,6 +464,7 @@ body {
         align-items: flex-start;
         text-align: left;
         padding: 1.5rem;
+        justify-content: flex-start;
     }
     
     .left-column {
@@ -488,9 +489,10 @@ body {
 @media (max-width: 768px) {
     .two-column-layout {
         padding: 1rem;
-        gap: 2rem;
+        gap: 1.5rem;
         align-items: center;
         text-align: center;
+        justify-content: flex-start;
     }
 
     .left-column {
@@ -498,7 +500,7 @@ body {
     }
 
     .right-column {
-        margin: 0 auto;
+        margin: 1.5rem auto 0;
     }
     
     .main-title {
