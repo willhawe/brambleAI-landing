@@ -61,9 +61,10 @@ body {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1380px;
+    width: min(1380px, 94vw);
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 clamp(24px, 4vw, 64px);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -342,6 +343,7 @@ body {
     padding: 0.5rem 0; /* Reduced from 2rem 0 to 1.5rem 0 */
     color: rgba(255, 255, 255, 0.7);
     font-size: 0.9rem;
+    margin-top: 2rem;
 }
 
 /* Responsive design */
@@ -395,29 +397,30 @@ body {
 .two-column-layout {
     display: flex;
     flex-wrap: wrap;
-    min-height: calc(100vh - 120px);
-    gap: 4rem;
-    align-items: flex-start;
-    max-width: 1400px;
+    flex: 1 1 auto;
+    gap: 3.5rem;
+    align-items: stretch;
+    justify-content: space-between;
+    max-width: 100%;
     margin: 0 auto;
-    padding: 2rem;
+    padding: clamp(2rem, 4vw, 3rem);
 }
 
 .left-column {
-    flex: 1 1 480px;
+    flex: 1 1 560px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    padding-right: 2rem;
+    padding-right: clamp(1.5rem, 3vw, 3.5rem);
 }
 
 .right-column {
-    flex: 1 1 440px;
-    max-width: 500px;
+    flex: 1 1 420px;
+    max-width: 520px;
 }
 
 .content-section {
-    max-width: 640px;
+    max-width: 720px;
 }
 
 .logo-section {
@@ -445,7 +448,7 @@ body {
     font-size: 1.3rem;
     color: rgba(255, 255, 255, 0.9); /* Changed back to white with opacity */
     line-height: 1.6;
-    max-width: 500px;
+    max-width: 640px;
 }
 
 .signup-text {
