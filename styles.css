@@ -211,6 +211,15 @@ body {
     margin: 0 auto;
 }
 
+.signup-title,
+.signup-subtitle {
+    text-align: center;
+}
+
+.signup-subtitle {
+    font-size: 0.95rem;
+}
+
 .signup-form {
     display: flex;
     flex-direction: column;
