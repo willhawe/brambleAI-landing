@@ -394,6 +394,7 @@ body {
 /* Two Column Layout Styles */
 .two-column-layout {
     display: flex;
+    flex-wrap: wrap;
     min-height: calc(100vh - 120px);
     gap: 4rem;
     align-items: flex-start;
@@ -403,7 +404,7 @@ body {
 }
 
 .left-column {
-    flex: 1;
+    flex: 1 1 480px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -411,8 +412,12 @@ body {
 }
 
 .right-column {
-    flex: 1;
+    flex: 1 1 440px;
     max-width: 500px;
+}
+
+.content-section {
+    max-width: 640px;
 }
 
 .logo-section {
@@ -453,12 +458,23 @@ body {
     .two-column-layout {
         flex-direction: column;
         gap: 3rem;
-        text-align: center;
-        align-items: center;
+        align-items: flex-start;
+        text-align: left;
+        padding: 1.5rem;
     }
     
     .left-column {
         padding-right: 0;
+        width: 100%;
+    }
+
+    .right-column {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .content-section {
+        max-width: 100%;
     }
     
     .main-title {
@@ -470,6 +486,16 @@ body {
     .two-column-layout {
         padding: 1rem;
         gap: 2rem;
+        align-items: center;
+        text-align: center;
+    }
+
+    .left-column {
+        align-items: center;
+    }
+
+    .right-column {
+        margin: 0 auto;
     }
     
     .main-title {
@@ -482,6 +508,11 @@ body {
     
     .logo {
         height: 60px;
+    }
+    
+    .content-section {
+        max-width: 480px;
+        text-align: center;
     }
 }
 
