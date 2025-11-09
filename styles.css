@@ -544,3 +544,12 @@ body.privacy-page {
     margin-top: 2rem;
     margin-bottom: 2rem;
 }
+
+.privacy-content ul {
+    margin-left: 1.25rem;
+    padding-left: 0.75rem;
+}
+
+.privacy-content li {
+    margin-bottom: 0.4rem;
+}
