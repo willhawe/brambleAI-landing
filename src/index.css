@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* BrambleAI Color Palette */
+    --bramble-deep-teal: 192 87% 10%;      /* #08242A */
+    --bramble-teal: 164 95% 24%;            /* #037457 */
+    --bramble-green: 153 89% 44%;           /* #1FC976 */
+    --bramble-mint: 143 78% 80%;            /* #A4F4C1 */
+    --bramble-slate: 215 25% 27%;           /* #364156 */
+    --bramble-charcoal: 215 20% 20%;        /* #29303D */
+    
+    --background: var(--bramble-deep-teal);
+    --foreground: var(--bramble-mint);
+
+    --card: 192 87% 12%;
+    --card-foreground: var(--bramble-mint);
+
+    --popover: 192 87% 12%;
+    --popover-foreground: var(--bramble-mint);
+
+    --primary: var(--bramble-green);
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: var(--bramble-teal);
+    --secondary-foreground: var(--bramble-mint);
+
+    --muted: 192 50% 20%;
+    --muted-foreground: 143 50% 70%;
+
+    --accent: var(--bramble-mint);
+    --accent-foreground: var(--bramble-deep-teal);
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 215 20% 35%;
+    --input: var(--bramble-charcoal);
+    --ring: var(--bramble-green);
+
+    --radius: 0.75rem;
+
+    /* Gradient definitions */
+    --gradient-1: linear-gradient(135deg, hsl(var(--bramble-deep-teal)) 0%, hsl(var(--bramble-teal)) 100%);
+    --gradient-2: linear-gradient(225deg, hsl(var(--bramble-teal)) 0%, hsl(var(--bramble-green)) 100%);
+    --gradient-3: radial-gradient(circle, hsl(var(--bramble-green)) 0%, hsl(var(--bramble-teal)) 100%);
+    --gradient-4: radial-gradient(ellipse, hsl(var(--bramble-mint)) 0%, hsl(var(--bramble-green)) 100%);
+    --gradient-5: linear-gradient(45deg, hsl(var(--bramble-deep-teal)) 0%, hsl(var(--bramble-green)) 100%);
+    --gradient-6: linear-gradient(315deg, hsl(var(--bramble-mint)) 0%, hsl(var(--bramble-teal)) 100%);
+    
+    /* Animation */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
