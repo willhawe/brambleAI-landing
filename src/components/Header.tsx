@@ -1,9 +1,32 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import BrambleLogo from "@/components/BrambleLogo";
+import { cn } from "@/lib/utils";
 
 const Header = () => {
+  const [isAtTop, setIsAtTop] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsAtTop(window.scrollY < 20);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 px-4 py-4 sm:px-6 sm:py-6">
+    <header
+      className={cn(
+        "fixed top-0 left-0 right-0 z-50 px-4 py-4 sm:px-6 sm:py-6 transition-all duration-300 ease-out",
+        "bg-background/70 backdrop-blur-md border-b border-white/5",
+        isAtTop ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-full pointer-events-none",
+      )}
+    >
       <nav className="max-w-7xl mx-auto flex items-center justify-between gap-3">
         <Link to="/" className="flex items-center shrink-0" aria-label="BrambleAI home">
           <BrambleLogo className="h-9 w-auto sm:h-10 md:h-12" />
