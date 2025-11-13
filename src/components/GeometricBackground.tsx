@@ -191,28 +191,97 @@ const GeometricBackground = ({ animate = true }: GeometricBackgroundProps) => {
     },
   ];
 
+  // Subtle idle animations for each rectangle
+  const idleAnimations = [
+    "idle-float-1 25s ease-in-out infinite",
+    "idle-float-2 30s ease-in-out infinite",
+    "idle-float-3 28s ease-in-out infinite",
+    "idle-float-4 32s ease-in-out infinite",
+    "idle-float-5 27s ease-in-out infinite",
+    "idle-float-6 29s ease-in-out infinite",
+    "idle-float-7 31s ease-in-out infinite",
+    "idle-float-8 26s ease-in-out infinite",
+    "idle-float-9 33s ease-in-out infinite",
+    "idle-float-10 28s ease-in-out infinite",
+  ];
+
   return (
-    <div className="fixed inset-0 overflow-hidden pointer-events-none">
-      {rectangles.map((rect, index) => {
-        const currentStyle = isRevealing ? rect.final : rect.initial;
-        
-        return (
-          <div
-            key={index}
-            className="absolute"
-            style={{
-              ...currentStyle,
-              zIndex: rect.final.zIndex,
-              transition: `all 3.75s cubic-bezier(0.4, 0, 0.2, 1) ${rect.delay}ms`,
-              willChange: "transform, left, top, opacity",
-              backfaceVisibility: "hidden",
-              WebkitFontSmoothing: "antialiased",
-              filter: "blur(0.5px)",
-            }}
-          />
-        );
-      })}
-    </div>
+    <>
+      <style>{`
+        @keyframes idle-float-1 {
+          0%, 100% { transform: translate(0, 0) rotate(-63deg); }
+          33% { transform: translate(15px, -20px) rotate(-62.5deg); }
+          66% { transform: translate(-10px, 15px) rotate(-63.3deg); }
+        }
+        @keyframes idle-float-2 {
+          0%, 100% { transform: translate(0, 0) rotate(-68deg); }
+          33% { transform: translate(-20px, 15px) rotate(-68.5deg); }
+          66% { transform: translate(12px, -18px) rotate(-67.7deg); }
+        }
+        @keyframes idle-float-3 {
+          0%, 100% { transform: translate(0, 0) rotate(52deg); }
+          33% { transform: translate(22px, 18px) rotate(51.5deg); }
+          66% { transform: translate(-15px, -12px) rotate(52.3deg); }
+        }
+        @keyframes idle-float-4 {
+          0%, 100% { transform: translate(0, 0) rotate(17deg); }
+          33% { transform: translate(-15px, -20px) rotate(17.5deg); }
+          66% { transform: translate(18px, 10px) rotate(16.7deg); }
+        }
+        @keyframes idle-float-5 {
+          0%, 100% { transform: translate(0, 0) rotate(17deg); }
+          33% { transform: translate(20px, 25px) rotate(16.5deg); }
+          66% { transform: translate(-12px, -15px) rotate(17.3deg); }
+        }
+        @keyframes idle-float-6 {
+          0%, 100% { transform: translate(0, 0) rotate(-63deg); }
+          33% { transform: translate(-25px, 15px) rotate(-63.5deg); }
+          66% { transform: translate(15px, -20px) rotate(-62.7deg); }
+        }
+        @keyframes idle-float-7 {
+          0%, 100% { transform: translate(0, 0) matrix(0.829038, 0.559193, 0.559193, -0.829038, 0, 0); }
+          33% { transform: translate(15px, -15px) matrix(0.829038, 0.559193, 0.559193, -0.829038, 0, 0); }
+          66% { transform: translate(-10px, 12px) matrix(0.829038, 0.559193, 0.559193, -0.829038, 0, 0); }
+        }
+        @keyframes idle-float-8 {
+          0%, 100% { transform: translate(0, 0) rotate(-26deg); }
+          33% { transform: translate(-20px, 20px) rotate(-26.5deg); }
+          66% { transform: translate(15px, -15px) rotate(-25.7deg); }
+        }
+        @keyframes idle-float-9 {
+          0%, 100% { transform: translate(0, 0) rotate(85deg); }
+          33% { transform: translate(25px, -20px) rotate(84.5deg); }
+          66% { transform: translate(-15px, 18px) rotate(85.3deg); }
+        }
+        @keyframes idle-float-10 {
+          0%, 100% { transform: translate(0, 0) rotate(-63deg); }
+          33% { transform: translate(-15px, 25px) rotate(-63.5deg); }
+          66% { transform: translate(20px, -12px) rotate(-62.7deg); }
+        }
+      `}</style>
+      <div className="fixed inset-0 overflow-hidden pointer-events-none">
+        {rectangles.map((rect, index) => {
+          const currentStyle = isRevealing ? rect.final : rect.initial;
+          
+          return (
+            <div
+              key={index}
+              className="absolute"
+              style={{
+                ...currentStyle,
+                zIndex: rect.final.zIndex,
+                transition: `all 3.75s cubic-bezier(0.4, 0, 0.2, 1) ${rect.delay}ms`,
+                animation: hasAnimated ? idleAnimations[index] : 'none',
+                willChange: "transform",
+                backfaceVisibility: "hidden",
+                WebkitFontSmoothing: "antialiased",
+                filter: "blur(0.5px)",
+              }}
+            />
+          );
+        })}
+      </div>
+    </>
   );
 };
 
