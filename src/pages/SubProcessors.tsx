@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
-import brambleLogoBlack from "@/assets/brambleai-logo-black.svg";
+import BrambleLogo from "@/components/BrambleLogo";
 
 const SubProcessors = () => {
   return (
     <div className="min-h-screen bg-white py-12 px-4">
       <div className="max-w-3xl mx-auto">
-        <Link to="/" className="inline-block mb-8">
-          <img src={brambleLogoBlack} alt="BrambleAI" className="h-12" />
+        <Link to="/" className="inline-block mb-8" aria-label="BrambleAI home">
+          <BrambleLogo variant="dark" className="h-10 w-auto sm:h-12" />
         </Link>
         
         <h1 className="text-4xl font-bold text-slate-950 mb-4">Subprocessors</h1>
