@@ -26,13 +26,15 @@ const SecurityMeasures = () => {
             </ul>
           </section>
 
-          <section>
+            <section>
             <h2 className="text-2xl font-bold mb-3">Use of AI Services</h2>
-            <p>
-              Some BrambleAI features are powered by Microsoft Azure AI Services. We apply strict controls to ensure that customer data remains secure and used only for the purpose of delivering our services. Customer data processed by Azure AI Services is never used to train foundation models or improve Microsoft’s general AI systems. Inputs and outputs are handled solely for the duration of the request and are not retained by Azure for model training or wider platform learning. 
+            <p className="mb-4">
+              Some BrambleAI features are powered by Microsoft Azure AI Services. We apply strict controls to ensure that customer data remains secure and used only for the purpose of delivering our services. Customer data processed by Azure AI Services is never used to train foundation models or improve Microsoft's general AI systems. Inputs and outputs are handled solely for the duration of the request and are not retained by Azure for model training or wider platform learning. 
             </p>
-              Where Azure AI Services support regional processing, we use UK or EU hosting to keep AI processing within appropriate jurisdictions. Where processing takes place in the United States due to model availability, such transfers are governed by Microsoft’s Data Protection Addendum, which incorporates the UK International Data Transfer Addendum (IDTA). These safeguards ensure that AI functionality enhances the BrambleAI platform while maintaining confidentiality, regulatory compliance, and control over customer data.
-          </section>
+            <p>
+              Where Azure AI Services support regional processing, we use UK or EU hosting to keep AI processing within appropriate jurisdictions. Where processing takes place in the United States due to model availability, such transfers are governed by Microsoft's Data Protection Addendum, which incorporates the UK International Data Transfer Addendum (IDTA). These safeguards ensure that AI functionality enhances the BrambleAI platform while maintaining confidentiality, regulatory compliance, and control over customer data.
+            </p>
+            </section>
 
           <section>
             <h2 className="text-2xl font-bold mb-3">Use of Mapbox</h2>
