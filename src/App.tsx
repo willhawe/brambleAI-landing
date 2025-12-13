@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import EarlyAccess from "./pages/EarlyAccess";
+import DataProcessingAgreement from "./pages/DataProcessingAgreement";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import SubProcessors from "./pages/SubProcessors";
 import SecurityMeasures from "./pages/SecurityMeasures";
@@ -37,6 +38,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/early-access" element={<EarlyAccess />} />
+            <Route path="/dpa" element={<DataProcessingAgreement />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/subprocessors" element={<SubProcessors />} />
             <Route path="/security-measures" element={<SecurityMeasures />} />
