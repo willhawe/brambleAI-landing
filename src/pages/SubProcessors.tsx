@@ -36,6 +36,11 @@ const SubProcessors = () => {
               </div>
 
               <div>
+                <h3 className="font-bold">Microsoft Azure / Azure OpenAI</h3>
+                <p>Cloud infrastructure and AI processing services, including secure execution of AI models.</p>
+              </div>
+
+              <div>
                 <h3 className="font-bold">Mapbox</h3>
                 <p>Mapping, geocoding, and routing services.</p>
               </div>
